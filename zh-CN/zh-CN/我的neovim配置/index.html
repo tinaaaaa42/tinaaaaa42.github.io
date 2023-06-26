@@ -1,0 +1,216 @@
+<!doctype html>
+<html lang="zh"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"><meta><title>我的neovim配置 - Young&#039;s Blogs</title><link rel="manifest" href="/manifest.json"><meta name="application-name" content="Young&#039;s Blogs"><meta name="msapplication-TileImage" content="/img/favicon.ico"><meta name="apple-mobile-web-app-capable" content="yes"><meta name="apple-mobile-web-app-title" content="Young&#039;s Blogs"><meta name="apple-mobile-web-app-status-bar-style" content="default"><meta name="description" content="本篇文章记录了我的neovim配置，可用于复用或查看快捷键。"><meta property="og:type" content="blog"><meta property="og:title" content="我的neovim配置"><meta property="og:url" content="https://tinaaaaa42.github.io/zh-CN/zh-CN/%E6%88%91%E7%9A%84neovim%E9%85%8D%E7%BD%AE/"><meta property="og:site_name" content="Young&#039;s Blogs"><meta property="og:description" content="本篇文章记录了我的neovim配置，可用于复用或查看快捷键。"><meta property="og:locale" content="zh_CN"><meta property="og:image" content="https://tinaaaaa42.github.io/img/og_image.png"><meta property="article:published_time" content="2023-06-20T14:02:55.000Z"><meta property="article:modified_time" content="2023-06-21T16:01:24.521Z"><meta property="article:author" content="Young"><meta property="article:tag" content="vim"><meta property="twitter:card" content="summary"><meta property="twitter:image:src" content="https://tinaaaaa42.github.io/img/og_image.png"><script type="application/ld+json">{"@context":"https://schema.org","@type":"BlogPosting","mainEntityOfPage":{"@type":"WebPage","@id":"https://tinaaaaa42.github.io/zh-CN/zh-CN/%E6%88%91%E7%9A%84neovim%E9%85%8D%E7%BD%AE/"},"headline":"我的neovim配置","image":["https://tinaaaaa42.github.io/img/og_image.png"],"datePublished":"2023-06-20T14:02:55.000Z","dateModified":"2023-06-21T16:01:24.521Z","author":{"@type":"Person","name":"Young"},"publisher":{"@type":"Organization","name":"Young's Blogs","logo":{"@type":"ImageObject","url":"https://tinaaaaa42.github.io/img/mylogo.png"}},"description":"本篇文章记录了我的neovim配置，可用于复用或查看快捷键。"}</script><link rel="canonical" href="https://tinaaaaa42.github.io/zh-CN/zh-CN/%E6%88%91%E7%9A%84neovim%E9%85%8D%E7%BD%AE/"><link rel="icon" href="/img/favicon.ico"><link rel="stylesheet" href="https://use.fontawesome.com/releases/v6.0.0/css/all.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/highlight.js@9.12.0/styles/atom-one-dark.css"><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Ubuntu:wght@400;600&amp;family=Source+Code+Pro"><link rel="stylesheet" href="/css/default.css"><style>body>.footer,body>.navbar,body>.section{opacity:0}</style><!--!--><!--!--><!--!--><script src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js" defer></script><!--!--><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/cookieconsent@3.1.1/build/cookieconsent.min.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/lightgallery@1.10.0/dist/css/lightgallery.min.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/justifiedGallery@3.8.1/dist/css/justifiedGallery.min.css"><!--!--><!--!--><style>.pace{-webkit-pointer-events:none;pointer-events:none;-webkit-user-select:none;-moz-user-select:none;user-select:none}.pace-inactive{display:none}.pace .pace-progress{background:#3273dc;position:fixed;z-index:2000;top:0;right:100%;width:100%;height:2px}</style><script src="https://cdn.jsdelivr.net/npm/pace-js@1.2.4/pace.min.js"></script><!--!--><!--!--><!-- hexo injector head_end start --><script>
+  (function () {
+      function switchTab() {
+          if (!location.hash) {
+            return;
+          }
+
+          const id = '#' + CSS.escape(location.hash.substring(1));
+          const $tabMenu = document.querySelector(`.tabs a[href="${id}"]`);
+          if (!$tabMenu) {
+            return;
+          }
+
+          const $tabMenuContainer = $tabMenu.parentElement.parentElement;
+          Array.from($tabMenuContainer.children).forEach($menu => $menu.classList.remove('is-active'));
+          Array.from($tabMenuContainer.querySelectorAll('a'))
+              .map($menu => document.getElementById($menu.getAttribute("href").substring(1)))
+              .forEach($content => $content.classList.add('is-hidden'));
+
+          if ($tabMenu) {
+              $tabMenu.parentElement.classList.add('is-active');
+          }
+          const $activeTab = document.querySelector(id);
+          if ($activeTab) {
+              $activeTab.classList.remove('is-hidden');
+          }
+      }
+      switchTab();
+      window.addEventListener('hashchange', switchTab, false);
+  })();
+  </script><!-- hexo injector head_end end --><meta name="generator" content="Hexo 6.3.0"></head><body class="is-2-column"><nav class="navbar navbar-main"><div class="container navbar-container"><div class="navbar-brand justify-content-center"><a class="navbar-item navbar-logo" href="/"><img src="/img/mylogo.png" alt="Young&#039;s Blogs" height="28"></a></div><div class="navbar-menu"><div class="navbar-start"><a class="navbar-item" href="/">Home</a><a class="navbar-item" href="/archives">Archives</a><a class="navbar-item" href="/categories">Categories</a><a class="navbar-item" href="/tags">Tags</a><a class="navbar-item" href="/about">About</a></div><div class="navbar-end"><a class="navbar-item" target="_blank" rel="noopener" title="Download on GitHub" href="https://github.com/tinaaaaa42"><i class="fab fa-github"></i></a><a class="navbar-item is-hidden-tablet catalogue" title="目录" href="javascript:;"><i class="fas fa-list-ul"></i></a><a class="navbar-item search" title="搜索" href="javascript:;"><i class="fas fa-search"></i></a></div></div></div></nav><section class="section"><div class="container"><div class="columns"><div class="column order-2 column-main is-8-tablet is-8-desktop is-8-widescreen"><div class="card"><article class="card-content article" role="article"><div class="article-meta is-size-7 is-uppercase level is-mobile"><div class="level-left"><span class="level-item"><time dateTime="2023-06-20T14:02:55.000Z" title="2023/6/20 22:02:55">2023-06-20</time>发表</span><span class="level-item"><time dateTime="2023-06-21T16:01:24.521Z" title="2023/6/22 00:01:24">2023-06-22</time>更新</span><span class="level-item"><a class="link-muted" href="/categories/beginning/">beginning</a></span><span class="level-item">10 分钟读完 (大约1489个字)</span><span class="level-item" id="busuanzi_container_page_pv"><span id="busuanzi_value_page_pv">0</span>次访问</span></div></div><h1 class="title is-3 is-size-4-mobile">我的neovim配置</h1><div class="content"><p>我的 neovim 配置基于油管上的这个<a target="_blank" rel="noopener" href="https://www.youtube.com/watch?v=vdn_pKJUda8">视频</a>，非常细致的老哥！</p>
+<p>在这一篇记录中不会涉及很多原理，基本用于个人的 cheat sheet。</p>
+<h1 id="Basic-File-Structure"><a href="#Basic-File-Structure" class="headerlink" title="Basic File Structure"></a>Basic File Structure</h1><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line">~/.config/</span><br><span class="line">|__ nvim/</span><br><span class="line">    |__ init.lua</span><br><span class="line">    |__ lua/</span><br><span class="line">        |__ young/</span><br><span class="line">            |__ core/</span><br><span class="line">            |   |__ colorscheme.lua</span><br><span class="line">            |   |__ options.lua</span><br><span class="line">            |   |__ keymaps.lua</span><br><span class="line">            |__ plugins/</span><br><span class="line">            |  |__ lualine.lua</span><br><span class="line">            |  |__ telescope.lua</span><br><span class="line">            |  |__ nvim-tree.lua</span><br><span class="line">            |  |__ ....</span><br><span class="line">            |__ plugins-setup.lua</span><br></pre></td></tr></table></figure>
+
+<h1 id="基本-options-配置"><a href="#基本-options-配置" class="headerlink" title="基本 options 配置"></a>基本 options 配置</h1><p>这部分内容在文件中比较容易看懂，也容易修改，不做赘述。</p>
+<h1 id="基本-keymaps"><a href="#基本-keymaps" class="headerlink" title="基本 keymaps"></a>基本 keymaps</h1><ul>
+<li>设置<code>leader-key</code>为空格</li>
+<li><code>INSERT</code>模式下按<code>jk</code>等同于<code>&lt;ESC&gt;</code>，即返回<code>NORMAL</code>模式</li>
+<li>查找后通过空格+nh 跳转到特定位置并取消高亮</li>
+<li><code>NORMAL</code>模式下通过<code>x</code>删除不复制进 Clipboard</li>
+<li><code>NORMAL</code>模式下通过空格+&#x2F;-对值进行递增&#x2F;递减</li>
+<li>split windows(<code>NORMAL</code>模式)<ul>
+<li>空格+sv 生成竖直窗口</li>
+<li>空格+sh 生成水平窗口</li>
+<li>空格+se 使窗口等大</li>
+<li>空格+sx 关闭当前窗口</li>
+</ul>
+</li>
+<li>tabs(<code>NORMAL</code>模式)<ul>
+<li>空格+to 打开新的 tab</li>
+<li>空格+tx 关闭当前 tab</li>
+<li>空格+tn 到下一个 tab</li>
+<li>空格+tp 到前一个 tab</li>
+</ul>
+</li>
+</ul>
+<h1 id="Plugins"><a href="#Plugins" class="headerlink" title="Plugins"></a>Plugins</h1><p>使用<code>Packer</code>作为插件管理器，基本按照文档完成<code>plugins-setup.lua</code>文件的框架。<br>并在<code>init.lua</code>文件最上方加入:</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">require(&quot;young.plugins-setup&quot;)</span><br></pre></td></tr></table></figure>
+
+<h2 id="配色"><a href="#配色" class="headerlink" title="配色"></a>配色</h2><figure class="highlight lua"><figcaption><span>plugins-setup.lua</span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">use(<span class="string">&quot;bluz71/vim-nightfly-guicolors&quot;</span>)</span><br></pre></td></tr></table></figure>
+
+<p>并在<code>colorscheme.lua</code>文件中指定。</p>
+<h2 id="Navigator"><a href="#Navigator" class="headerlink" title="Navigator"></a>Navigator</h2><figure class="highlight lua"><figcaption><span>plugins-setup.lua</span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">use(<span class="string">&quot;christoomey/vim-tmux-navigator&quot;</span>)</span><br></pre></td></tr></table></figure>
+
+<p>通过<code>Ctrl+h/j/k/l</code>实现窗口间的移动</p>
+<h2 id="Maximizer"><a href="#Maximizer" class="headerlink" title="Maximizer"></a>Maximizer</h2><figure class="highlight lua"><figcaption><span>plugins-setup.lua</span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">use(<span class="string">&quot;szw/vim-maximizer&quot;</span>)</span><br></pre></td></tr></table></figure>
+
+<p>在<code>keymaps.lua</code>中设置空格+sm 将当前窗口最大化或恢复</p>
+<h2 id="Essential"><a href="#Essential" class="headerlink" title="Essential"></a>Essential</h2><figure class="highlight lua"><figcaption><span>plugins-setup.lua</span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">use(<span class="string">&quot;tpope/vim-surround&quot;</span>)</span><br><span class="line">use(<span class="string">&quot;vim-scripts/ReplaceWithRegister&quot;</span>)</span><br></pre></td></tr></table></figure>
+
+<ul>
+<li>ys+w+” 在该单词两边加双引号</li>
+<li>ds+” 去掉两边的双引号</li>
+<li>cs+”+’ 将两边的双引号改为单引号</li>
+<li>yw 复制当前词，grw 替换为复制的词</li>
+</ul>
+<h2 id="Comment"><a href="#Comment" class="headerlink" title="Comment"></a>Comment</h2><figure class="highlight lua"><figcaption><span>plugins-setup.lua</span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">use(<span class="string">&quot;numToStr/Comment.nvim&quot;</span>)</span><br></pre></td></tr></table></figure>
+
+<p>在<code>plugins</code>文件夹中创建<code>comment.lua</code>，完成 setup 后在<code>init.lua</code>中 require</p>
+<p>通过 gc+指定内容进行注释或者取消注释，如 gcc 注释本行，gc9j 注释九行。</p>
+<h2 id="File-Explore"><a href="#File-Explore" class="headerlink" title="File Explore"></a>File Explore</h2><figure class="highlight lua"><figcaption><span>plugins-setup.lua</span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">use(<span class="string">&quot;nvim-tree/nvim-tree.lua&quot;</span>)</span><br></pre></td></tr></table></figure>
+
+<p>在<code>plugins</code>文件夹中创建<code>nvim-tree.lua</code>，完成 setup 后在<code>init.lua</code>中 require<br>通过<code>:NvimTreeToggle</code>或设置快捷键空格+e 调出 File Tree<br>在光标在对应文件夹中时按 a 并在下方输入栏中输入文件名即可创建新文件</p>
+<p>要支持 icon 使用：</p>
+<figure class="highlight lua"><figcaption><span>plugins-setup.lua</span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">use(<span class="string">&quot;kyazdani42/nvim-web-devicons&quot;</span>)</span><br></pre></td></tr></table></figure>
+
+<h2 id="Status-line"><a href="#Status-line" class="headerlink" title="Status line"></a>Status line</h2><figure class="highlight lua"><figcaption><span>plugins-setup.lua</span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">use(<span class="string">&quot;nvim-lualine/lualine.nvim&quot;</span>)</span><br></pre></td></tr></table></figure>
+
+<p>在<code>plugins</code>文件夹中创建<code>lualine.lua</code>，完成 setup 后在<code>init.lua</code>中 require</p>
+<h2 id="Fuzzy-finding"><a href="#Fuzzy-finding" class="headerlink" title="Fuzzy finding"></a>Fuzzy finding</h2><figure class="highlight lua"><figcaption><span>plugins-setup.lua</span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">use(&#123;<span class="string">&quot;nvim-telescope/telescope-fzf-native.nvim&quot;</span>, run=<span class="string">&quot;make&quot;</span>&#125;)</span><br><span class="line">use(&#123;<span class="string">&quot;nvim-telescope/telescope.nvim&quot;</span>, branch=<span class="string">&quot;0.1.x&quot;</span>&#125;)</span><br></pre></td></tr></table></figure>
+
+<p>在<code>plugins</code>文件夹中创建<code>telescope.lua</code>，完成 setup 后在<code>init.lua</code>中 require</p>
+<p>keymaps 设置：</p>
+<ul>
+<li>空格+ff 在项目中寻找文件(<em>find files</em>)</li>
+<li>空格+fs 在项目中寻找文字</li>
+<li>空格+fc 在项目中寻找当前的 string</li>
+<li>空格+fb 显示 telescope 的 buffer</li>
+<li>空格+fh 显示 telescope 的帮助</li>
+</ul>
+<p>多个匹配通过<code>Ctrl+j/k</code>上下移动</p>
+<h2 id="Autocompletion-and-Snippets"><a href="#Autocompletion-and-Snippets" class="headerlink" title="Autocompletion and Snippets"></a>Autocompletion and Snippets</h2><figure class="highlight lua"><figcaption><span>plugins-setup.lua</span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">use(<span class="string">&quot;hrsh7th/nvim-cmp&quot;</span>)</span><br><span class="line">use(<span class="string">&quot;hrsh7th/cmp-buffer&quot;</span>)</span><br><span class="line">use(<span class="string">&quot;hrsh7th/cmp-path&quot;</span>)</span><br><span class="line"></span><br><span class="line">use(<span class="string">&quot;L3MON4D3/LuaSnip&quot;</span>)</span><br><span class="line">use(<span class="string">&quot;saadparwaiz1/cmp_luasnip&quot;</span>)</span><br><span class="line">use(<span class="string">&quot;rafamadriz/friendly-snippets&quot;</span>)</span><br></pre></td></tr></table></figure>
+
+<p>在<code>plugins</code>文件夹中创建<code>nvim-cmp.lua</code>，完成 setup 后在<code>init.lua</code>中 require<br>在补全建议中，通过<code>Ctrl+j/k</code>上下选择，<code>Ctrl+b/f</code>上下翻页，<code>Ctrl+e</code>关闭，回车选择</p>
+<h2 id="LSP"><a href="#LSP" class="headerlink" title="LSP"></a>LSP</h2><figure class="highlight lua"><figcaption><span>plugins-setup.lua</span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">-- managing &amp; installing lsp servers</span></span><br><span class="line">use(<span class="string">&quot;williamboman/mason.nvim&quot;</span>)</span><br><span class="line">use(<span class="string">&quot;williamboman/mason-lspconfig.nvim&quot;</span>)</span><br><span class="line"></span><br><span class="line"><span class="comment">-- configuring lsp servers</span></span><br><span class="line">use(<span class="string">&quot;neovim/nvim-lspconfig&quot;</span>)</span><br><span class="line">use(<span class="string">&quot;hrsh7th/cmp-nvim-lsp&quot;</span>) <span class="comment">-- for autocompletion</span></span><br><span class="line">use(&#123;</span><br><span class="line">    <span class="string">&quot;glepnir/lspsaga.nvim&quot;</span>,</span><br><span class="line">    branch = <span class="string">&quot;main&quot;</span>,</span><br><span class="line">    requires = &#123;</span><br><span class="line">        &#123; <span class="string">&quot;nvim-tree/nvim-web-devicons&quot;</span> &#125;,</span><br><span class="line">        &#123; <span class="string">&quot;nvim-treesitter/nvim-treesitter&quot;</span> &#125;,</span><br><span class="line">    &#125;,</span><br><span class="line">&#125;) <span class="comment">-- enhanced lsp uis</span></span><br><span class="line">use(<span class="string">&quot;jose-elias-alvarez/typescript.nvim&quot;</span>) <span class="comment">-- additional functionality for typescript server (e.g. rename file &amp; update imports)</span></span><br><span class="line">use(<span class="string">&quot;onsails/lspkind.nvim&quot;</span>) <span class="comment">-- vs-code like icons for autocompletion</span></span><br></pre></td></tr></table></figure>
+
+<p>在<code>plugins</code>文件夹中创建<code>lua</code>文件夹，然后在<code>lua</code>文件夹中创建<code>mason.lua</code>，完成 mason 的 setup 后<br>指定需要 lsp 的语言，再在<code>init.lua</code>中 require</p>
+<p>再在<code>lua</code>文件夹中创建<code>lspconfig.lua</code>，按照文档完成各 lsp 的配置后在<code>init.lua</code>中 require</p>
+<p>再在<code>lua</code>文件夹中创建<code>lspsaga.lua</code>，设定<code>Ctrl+f/b</code>为上下翻页后，在<code>init.lua</code>中 require</p>
+<ul>
+<li><code>gf</code> show definitions and references</li>
+<li><code>gD</code> goto declaration</li>
+<li><code>gd</code> see the definition and make edition</li>
+<li><code>gi</code> goto implementation</li>
+<li><code>空格+ca</code> see available code actions</li>
+<li><code>空格+rn</code> smart rename</li>
+<li><code>空格+D</code> show diagnostics for line</li>
+<li><code>空格+d</code> show diagnostic for cursor</li>
+<li><code>[d</code> jump to previous diagnostic in buffer</li>
+<li><code>]d</code> jump to next diagnostic in buffer</li>
+<li><code>K</code> show documentation for what is under cursor</li>
+<li><code>空格+o</code> show outline on the right side</li>
+</ul>
+<h2 id="formatting-amp-linting"><a href="#formatting-amp-linting" class="headerlink" title="formatting &amp; linting"></a>formatting &amp; linting</h2><figure class="highlight lua"><figcaption><span>plugins-setup.lua</span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">use(<span class="string">&quot;jose-elias-alvarez/null-ls.nvim&quot;</span>)</span><br><span class="line">use(<span class="string">&quot;jayp0521/mason-null-ls.nvim&quot;</span>)</span><br></pre></td></tr></table></figure>
+
+<p>在<code>lua</code>文件夹中创建<code>null-ls.lua</code>，完成 setup 后在<code>init.lua</code>中 require</p>
+<h2 id="Treesitter-amp-Auto-closing"><a href="#Treesitter-amp-Auto-closing" class="headerlink" title="Treesitter &amp; Auto closing"></a>Treesitter &amp; Auto closing</h2><figure class="highlight lua"><figcaption><span>plugins-setup.lua</span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">use(&#123;</span><br><span class="line">    <span class="string">&quot;nvim-treesitter/nvim-treesitter&quot;</span>,</span><br><span class="line">    run = <span class="function"><span class="keyword">function</span><span class="params">()</span></span></span><br><span class="line">        <span class="keyword">local</span> ts_update = <span class="built_in">require</span>(<span class="string">&quot;nvim-treesitter.install&quot;</span>).update(&#123; with_sync = <span class="literal">true</span> &#125;)</span><br><span class="line">        ts_update()</span><br><span class="line">    <span class="keyword">end</span>,</span><br><span class="line">&#125;)</span><br><span class="line"></span><br><span class="line">use(<span class="string">&quot;windwp/nvim-autopairs&quot;</span>) <span class="comment">-- autoclose parens, brackets, quotes, etc...</span></span><br><span class="line">use(&#123; <span class="string">&quot;windwp/nvim-ts-autotag&quot;</span>, after = <span class="string">&quot;nvim-treesitter&quot;</span> &#125;) <span class="comment">-- autoclose tags</span></span><br></pre></td></tr></table></figure>
+
+<p><code>autopairs.lua</code> + <code>treesitter.lua</code></p>
+<h2 id="git-integration"><a href="#git-integration" class="headerlink" title="git integration"></a>git integration</h2><figure class="highlight lua"><figcaption><span>plugins-setup.lua</span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">use(<span class="string">&quot;lewis6991/gitsigns.nvim&quot;</span>)</span><br></pre></td></tr></table></figure>
+
+<p><code>gitsigns.lua</code></p>
+<h1 id="Tmux"><a href="#Tmux" class="headerlink" title="Tmux"></a>Tmux</h1><p><code>Tmux</code>可以方便在一个界面内打开多个命令行窗口，我的配置同样是参考这位老哥的<a target="_blank" rel="noopener" href="https://www.youtube.com/watch?v=U-omALWIBos">视频</a>。</p>
+<h2 id="Command-Line"><a href="#Command-Line" class="headerlink" title="Command Line"></a>Command Line</h2><ul>
+<li><code>tmux new -s Session</code> 创建并进入一个名为<code>Session</code>的 session</li>
+<li><code>tmux detach</code> 退出 session</li>
+<li><code>tmux ls</code> 列出当前所有 session</li>
+<li><code>tmux attach -t Session</code> 进入已存在的名为<code>Session</code>的 session</li>
+<li><code>exit</code> 关闭当前窗口</li>
+</ul>
+<h2 id="keymaps"><a href="#keymaps" class="headerlink" title="keymaps"></a>keymaps</h2><ul>
+<li>设置<code>prefix</code>键为<code>Ctrl+a</code></li>
+<li><code>prefix+s</code> 显示所有 session 并可以通过 j&#x2F;k 选择进入</li>
+<li><code>prefix+|</code> 生成垂直窗口</li>
+<li><code>prefix+-</code> 生成水平窗口</li>
+<li><code>prefix+r</code> 刷新配置</li>
+<li><code>prefix+j/k/h/l</code> 调整窗口大小</li>
+<li><code>prefix+m</code> 当前窗口最大化或恢复</li>
+<li><code>Ctrl+j/k/h/l</code> 光标在窗口间移动</li>
+<li><code>prefix+c</code> 创建新的窗口（全屏），随后可用<ul>
+<li><code>prefix+编号</code> 进行窗口选择</li>
+<li><code>prefix+,</code> 进行重命名</li>
+<li><code>prefix+p/n</code> 前一个或后一个窗口</li>
+<li><code>prefix+w</code> 显示所有的 session 和窗口</li>
+</ul>
+</li>
+<li>命令行界面可以通过<code>j/k</code>上下移动，<code>Ctrl+u/d</code>上下半页，<code>Ctrl+b/f</code>上下页<br>也可以通过<code>y</code>进行复制</li>
+<li><code>prefix+I</code> 下载插件</li>
+</ul>
+</div><div class="article-licensing box"><div class="licensing-title"><p>我的neovim配置</p><p><a href="https://tinaaaaa42.github.io/zh-CN/zh-CN/我的neovim配置/">https://tinaaaaa42.github.io/zh-CN/zh-CN/我的neovim配置/</a></p></div><div class="licensing-meta level is-mobile"><div class="level-left"><div class="level-item is-narrow"><div><h6>作者</h6><p>Young</p></div></div><div class="level-item is-narrow"><div><h6>发布于</h6><p>2023-06-20</p></div></div><div class="level-item is-narrow"><div><h6>更新于</h6><p>2023-06-22</p></div></div><div class="level-item is-narrow"><div><h6>许可协议</h6><p><a class="icons" rel="noopener" target="_blank" title="Creative Commons" href="https://creativecommons.org/"><i class="icon fab fa-creative-commons"></i></a><a class="icons" rel="noopener" target="_blank" title="Attribution" href="https://creativecommons.org/licenses/by/4.0/"><i class="icon fab fa-creative-commons-by"></i></a><a class="icons" rel="noopener" target="_blank" title="Noncommercial" href="https://creativecommons.org/licenses/by-nc/4.0/"><i class="icon fab fa-creative-commons-nc"></i></a></p></div></div></div></div></div><div class="article-tags is-size-7 mb-4"><span class="mr-2">#</span><a class="link-muted mr-2" rel="tag" href="/tags/vim/">vim</a></div><div class="a2a_kit a2a_kit_size_32 a2a_default_style"><a class="a2a_dd" target="_blank" rel="noopener" href="https://www.addtoany.com/share"></a><a class="a2a_button_facebook"></a><a class="a2a_button_twitter"></a><a class="a2a_button_telegram"></a><a class="a2a_button_whatsapp"></a><a class="a2a_button_reddit"></a></div><script src="https://static.addtoany.com/menu/page.js" defer></script></article></div><!--!--><nav class="post-navigation mt-4 level is-mobile"><div class="level-start"><a class="article-nav-prev level level-item link-muted" href="/zh-CN/zh-CN/Effective-Modern-C-1-%E7%B1%BB%E5%9E%8B%E6%8E%A8%E5%AF%BC/"><i class="level-item fas fa-chevron-left"></i><span class="level-item">Effective Modern C++(1) 类型推导</span></a></div><div class="level-end"><a class="article-nav-next level level-item link-muted" href="/zh-CN/zh-CN/icarus%E7%9A%84%E4%B8%80%E4%BA%9B%E7%94%A8%E6%B3%95/"><span class="level-item">icarus的一些用法</span><i class="level-item fas fa-chevron-right"></i></a></div></nav><div class="card"><div class="card-content"><h3 class="title is-5">评论</h3><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/disqusjs@1.3.0/dist/disqusjs.css"><div id="disqus_thread"><noscript>Please enable JavaScript to view the <a target="_blank" rel="noopener" href="//disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript></div><script src="https://cdn.jsdelivr.net/npm/disqusjs@1.3.0/dist/disqus.js"></script><script>new DisqusJS({
+            shortname: 'my-hexo-blog-1',
+            apikey: "mIScIBGsmWheQfzfZvTfagpdCPoMjziqRZkFlFiBXnTC9IAU9wSJcfIsc4LfXFyo",
+            siteName: "Young's Blogs",
+            identifier: "zh-CN/zh-CN/我的neovim配置/",
+            url: "https://tinaaaaa42.github.io/zh-CN/zh-CN/%E6%88%91%E7%9A%84neovim%E9%85%8D%E7%BD%AE/",
+            title: "我的neovim配置",
+            
+            
+            
+            
+        });</script></div></div></div><div class="column column-left is-4-tablet is-4-desktop is-4-widescreen  order-1"><div class="card widget" data-type="profile"><div class="card-content"><nav class="level"><div class="level-item has-text-centered flex-shrink-1"><div><figure class="image is-128x128 mx-auto mb-2"><img class="avatar" src="/img/avatar.png" alt="Young"></figure><p class="title is-size-4 is-block" style="line-height:inherit;">Young</p><p class="is-size-6 is-block">Student</p><p class="is-size-6 is-flex justify-content-center"><i class="fas fa-map-marker-alt mr-1"></i><span>Earth, Solar System</span></p></div></div></nav><nav class="level is-mobile"><div class="level-item has-text-centered is-marginless"><div><p class="heading">文章</p><a href="/archives"><p class="title">4</p></a></div></div><div class="level-item has-text-centered is-marginless"><div><p class="heading">分类</p><a href="/categories"><p class="title">2</p></a></div></div><div class="level-item has-text-centered is-marginless"><div><p class="heading">标签</p><a href="/tags"><p class="title">5</p></a></div></div></nav><div class="level"><a class="level-item button is-primary is-rounded" href="https://github.com/tinaaaaa42" target="_blank" rel="noopener">关注我</a></div><div class="level is-mobile is-multiline"><a class="level-item button is-transparent is-marginless" target="_blank" rel="noopener" title="Github" href="https://github.com/tinaaaaa42"><i class="fab fa-github"></i></a><a class="level-item button is-transparent is-marginless" target="_blank" rel="noopener" title="Facebook" href="https://facebook.com"><i class="fab fa-facebook"></i></a><a class="level-item button is-transparent is-marginless" target="_blank" rel="noopener" title="Twitter" href="https://twitter.com"><i class="fab fa-twitter"></i></a><a class="level-item button is-transparent is-marginless" target="_blank" rel="noopener" title="Dribbble" href="https://dribbble.com"><i class="fab fa-dribbble"></i></a><a class="level-item button is-transparent is-marginless" target="_blank" rel="noopener" title="RSS" href="/"><i class="fas fa-rss"></i></a></div></div></div><div class="card widget" data-type="categories"><div class="card-content"><div class="menu"><h3 class="menu-label">分类</h3><ul class="menu-list"><li><a class="level is-mobile" href="/categories/Effective-Modern-C/"><span class="level-start"><span class="level-item">Effective Modern C++</span></span><span class="level-end"><span class="level-item tag">1</span></span></a></li><li><a class="level is-mobile" href="/categories/beginning/"><span class="level-start"><span class="level-item">beginning</span></span><span class="level-end"><span class="level-item tag">2</span></span></a></li></ul></div></div></div><div class="card widget" data-type="recent-posts"><div class="card-content"><h3 class="menu-label">最新文章</h3><article class="media"><div class="media-content"><p class="date"><time dateTime="2023-06-25T16:18:48.925Z">2023-06-26</time></p><p class="title"><a href="/undefined/hello-world/">Hello World</a></p></div></article><article class="media"><div class="media-content"><p class="date"><time dateTime="2023-06-24T11:59:49.000Z">2023-06-24</time></p><p class="title"><a href="/zh-CN/zh-CN/Effective-Modern-C-1-%E7%B1%BB%E5%9E%8B%E6%8E%A8%E5%AF%BC/">Effective Modern C++(1) 类型推导</a></p><p class="categories"><a href="/categories/Effective-Modern-C/">Effective Modern C++</a></p></div></article><article class="media"><div class="media-content"><p class="date"><time dateTime="2023-06-20T14:02:55.000Z">2023-06-20</time></p><p class="title"><a href="/zh-CN/zh-CN/%E6%88%91%E7%9A%84neovim%E9%85%8D%E7%BD%AE/">我的neovim配置</a></p><p class="categories"><a href="/categories/beginning/">beginning</a></p></div></article><article class="media"><div class="media-content"><p class="date"><time dateTime="2023-06-15T16:43:33.000Z">2023-06-16</time></p><p class="title"><a href="/zh-CN/zh-CN/icarus%E7%9A%84%E4%B8%80%E4%BA%9B%E7%94%A8%E6%B3%95/">icarus的一些用法</a></p><p class="categories"><a href="/categories/beginning/">beginning</a></p></div></article></div></div><div class="card widget" data-type="tags"><div class="card-content"><div class="menu"><h3 class="menu-label">标签</h3><div class="field is-grouped is-grouped-multiline"><div class="control"><a class="tags has-addons" href="/tags/C-11/"><span class="tag">C++11</span><span class="tag">1</span></a></div><div class="control"><a class="tags has-addons" href="/tags/C-14/"><span class="tag">C++14</span><span class="tag">1</span></a></div><div class="control"><a class="tags has-addons" href="/tags/hexo/"><span class="tag">hexo</span><span class="tag">1</span></a></div><div class="control"><a class="tags has-addons" href="/tags/icarus/"><span class="tag">icarus</span><span class="tag">1</span></a></div><div class="control"><a class="tags has-addons" href="/tags/vim/"><span class="tag">vim</span><span class="tag">1</span></a></div></div></div></div></div><div class="card widget" id="toc" data-type="toc"><div class="card-content"><div class="menu"><h3 class="menu-label">目录</h3><ul class="menu-list"><li><a class="level is-mobile" href="#Basic-File-Structure"><span class="level-left"><span class="level-item">1</span><span class="level-item">Basic File Structure</span></span></a></li><li><a class="level is-mobile" href="#基本-options-配置"><span class="level-left"><span class="level-item">2</span><span class="level-item">基本 options 配置</span></span></a></li><li><a class="level is-mobile" href="#基本-keymaps"><span class="level-left"><span class="level-item">3</span><span class="level-item">基本 keymaps</span></span></a></li><li><a class="level is-mobile" href="#Plugins"><span class="level-left"><span class="level-item">4</span><span class="level-item">Plugins</span></span></a><ul class="menu-list"><li><a class="level is-mobile" href="#配色"><span class="level-left"><span class="level-item">4.1</span><span class="level-item">配色</span></span></a></li><li><a class="level is-mobile" href="#Navigator"><span class="level-left"><span class="level-item">4.2</span><span class="level-item">Navigator</span></span></a></li><li><a class="level is-mobile" href="#Maximizer"><span class="level-left"><span class="level-item">4.3</span><span class="level-item">Maximizer</span></span></a></li><li><a class="level is-mobile" href="#Essential"><span class="level-left"><span class="level-item">4.4</span><span class="level-item">Essential</span></span></a></li><li><a class="level is-mobile" href="#Comment"><span class="level-left"><span class="level-item">4.5</span><span class="level-item">Comment</span></span></a></li><li><a class="level is-mobile" href="#File-Explore"><span class="level-left"><span class="level-item">4.6</span><span class="level-item">File Explore</span></span></a></li><li><a class="level is-mobile" href="#Status-line"><span class="level-left"><span class="level-item">4.7</span><span class="level-item">Status line</span></span></a></li><li><a class="level is-mobile" href="#Fuzzy-finding"><span class="level-left"><span class="level-item">4.8</span><span class="level-item">Fuzzy finding</span></span></a></li><li><a class="level is-mobile" href="#Autocompletion-and-Snippets"><span class="level-left"><span class="level-item">4.9</span><span class="level-item">Autocompletion and Snippets</span></span></a></li><li><a class="level is-mobile" href="#LSP"><span class="level-left"><span class="level-item">4.10</span><span class="level-item">LSP</span></span></a></li><li><a class="level is-mobile" href="#formatting-amp-linting"><span class="level-left"><span class="level-item">4.11</span><span class="level-item">formatting &amp; linting</span></span></a></li><li><a class="level is-mobile" href="#Treesitter-amp-Auto-closing"><span class="level-left"><span class="level-item">4.12</span><span class="level-item">Treesitter &amp; Auto closing</span></span></a></li><li><a class="level is-mobile" href="#git-integration"><span class="level-left"><span class="level-item">4.13</span><span class="level-item">git integration</span></span></a></li></ul></li><li><a class="level is-mobile" href="#Tmux"><span class="level-left"><span class="level-item">5</span><span class="level-item">Tmux</span></span></a><ul class="menu-list"><li><a class="level is-mobile" href="#Command-Line"><span class="level-left"><span class="level-item">5.1</span><span class="level-item">Command Line</span></span></a></li><li><a class="level is-mobile" href="#keymaps"><span class="level-left"><span class="level-item">5.2</span><span class="level-item">keymaps</span></span></a></li></ul></li></ul></div></div><style>#toc .menu-list > li > a.is-active + .menu-list { display: block; }#toc .menu-list > li > a + .menu-list { display: none; }</style><script src="/js/toc.js" defer></script></div></div><!--!--></div></div></section><footer class="footer"><div class="container"><div class="level"><div class="level-start"><a class="footer-logo is-block mb-2" href="/"><img src="/img/mylogo.png" alt="Young&#039;s Blogs" height="28"></a><p class="is-size-7"><span>&copy; 2023 Young</span>  Powered by <a href="https://hexo.io/" target="_blank" rel="noopener">Hexo</a> &amp; <a href="https://github.com/ppoffice/hexo-theme-icarus" target="_blank" rel="noopener">Icarus</a><br><span id="busuanzi_container_site_uv">共<span id="busuanzi_value_site_uv">0</span>个访客</span></p><p class="is-size-7">© 2019</p></div><div class="level-end"><div class="field has-addons"><p class="control"><a class="button is-transparent is-large" target="_blank" rel="noopener" title="Creative Commons" href="https://creativecommons.org/"><i class="fab fa-creative-commons"></i></a></p><p class="control"><a class="button is-transparent is-large" target="_blank" rel="noopener" title="Attribution 4.0 International" href="https://creativecommons.org/licenses/by/4.0/"><i class="fab fa-creative-commons-by"></i></a></p><p class="control"><a class="button is-transparent is-large" target="_blank" rel="noopener" title="Download on GitHub" href="https://github.com/ppoffice/hexo-theme-icarus"><i class="fab fa-github"></i></a></p></div></div></div></div></footer><script src="https://cdn.jsdelivr.net/npm/jquery@3.3.1/dist/jquery.min.js"></script><script src="https://cdn.jsdelivr.net/npm/moment@2.22.2/min/moment-with-locales.min.js"></script><script src="https://cdn.jsdelivr.net/npm/clipboard@2.0.4/dist/clipboard.min.js" defer></script><script>moment.locale("zh-cn");</script><script>var IcarusThemeSettings = {
+            article: {
+                highlight: {
+                    clipboard: true,
+                    fold: 'unfolded'
+                }
+            }
+        };</script><script src="/js/column.js"></script><script src="/js/animation.js"></script><a id="back-to-top" title="回到顶端" href="javascript:;"><i class="fas fa-chevron-up"></i></a><script src="/js/back_to_top.js" defer></script><!--!--><!--!--><!--!--><!--!--><script src="https://cdn.jsdelivr.net/npm/cookieconsent@3.1.1/build/cookieconsent.min.js" defer></script><script>window.addEventListener("load", () => {
+      window.cookieconsent.initialise({
+        type: "info",
+        theme: "edgeless",
+        static: false,
+        position: "bottom-left",
+        content: {
+          message: "此网站使用Cookie来改善您的体验。",
+          dismiss: "知道了！",
+          allow: "允许使用Cookie",
+          deny: "拒绝",
+          link: "了解更多",
+          policy: "Cookie政策",
+          href: "https://www.cookiesandyou.com/",
+        },
+        palette: {
+          popup: {
+            background: "#edeff5",
+            text: "#838391"
+          },
+          button: {
+            background: "#4b81e8"
+          },
+        },
+      });
+    });</script><script src="https://cdn.jsdelivr.net/npm/lightgallery@1.10.0/dist/js/lightgallery.min.js" defer></script><script src="https://cdn.jsdelivr.net/npm/justifiedGallery@3.8.1/dist/js/jquery.justifiedGallery.min.js" defer></script><script>window.addEventListener("load", () => {
+            if (typeof $.fn.lightGallery === 'function') {
+                $('.article').lightGallery({ selector: '.gallery-item' });
+            }
+            if (typeof $.fn.justifiedGallery === 'function') {
+                if ($('.justified-gallery > p > .gallery-item').length) {
+                    $('.justified-gallery > p > .gallery-item').unwrap();
+                }
+                $('.justified-gallery').justifiedGallery();
+            }
+        });</script><!--!--><!--!--><!--!--><!--!--><!--!--><script src="/js/main.js" defer></script><div class="searchbox"><div class="searchbox-container"><div class="searchbox-header"><div class="searchbox-input-container"><input class="searchbox-input" type="text" placeholder="想要查找什么..."></div><a class="searchbox-close" href="javascript:;">×</a></div><div class="searchbox-body"></div></div></div><script src="/js/insight.js" defer></script><script>document.addEventListener('DOMContentLoaded', function () {
+            loadInsight({"contentUrl":"/content.json"}, {"hint":"想要查找什么...","untitled":"(无标题)","posts":"文章","pages":"页面","categories":"分类","tags":"标签"});
+        });</script></body></html>
